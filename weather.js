@@ -1,17 +1,17 @@
 class Weather{
-  constructor(){
+  constructor(city, state){
     this.apiKey = 'b08b3b941a34891f0be81bc4ff7bfa8a';
     this.city = city;
     this.state = state;
   }
 
   // Fetch weather from api
-  async getweather(){
-    const responce = await fetch(`api.openweathermap.org/data/2.5/weather?q={${this.city}},{${this.state}}&appid={${this.apiKey}}`);
+  async getWeather(){
+    const responce = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.state}&appid=b08b3b941a34891f0be81bc4ff7bfa8a`);
 
     const responceData = await responce.json();
 
-    return responceData.current_opservation;
+    return responceData.weather;
   }
 
   // change weather location
