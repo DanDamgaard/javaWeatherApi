@@ -11,14 +11,14 @@ class UI {
     this.wind = document.getElementById('w-wind');
   }
 
-  paint(weather){
-    this.location.textContent = `${weather.name}, ${weather.sys.country}`;
-    this.desc.textContent = weather.weather[0].description;
-    this.string.textContent = `${weather.main.temp}°`;
-    this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
-    this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}%`
-    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}°`
-    this.dewpoint.textContent = `Pressure: ${weather.main.pressure} hPa`
-    this.wind.textContent = `Wind Speed: ${weather.wind.speed} meter/sec`
+  paint(ui){
+    this.location.textContent = `${ui.name}, ${ui.sys.country}`;
+    this.desc.textContent = ui.weather[0].description;
+    this.string.textContent = `${ui.main.temp}°`;
+    this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${ui.weather[0].icon}@2x.png`);
+    this.humidity.textContent = `Relative Humidity: ${ui.main.humidity}%`
+    this.feelsLike.textContent = `Feels like: ${ui.main.feels_like}°`
+    this.dewpoint.textContent = `Pressure: ${ui.main.pressure} hPa`
+    this.wind.textContent = `Wind Speed: ${ui.wind.speed} meter/sec`
   }
 }
